@@ -1,4 +1,11 @@
 from django.shortcuts import render
-from django import render
+from rest_framework import generics
+from .models import Contact
+from .serializers import ContactSerializer
 
-# Create your views here.
+
+class ContactView(generics.ListAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    
+
