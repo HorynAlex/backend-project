@@ -9,3 +9,9 @@ class ContactView(generics.ListAPIView):
     serializer_class = ContactSerializer
     
 
+
+class ContactDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    
+ 
